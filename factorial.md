@@ -3,51 +3,49 @@
 # Experiment Name : Factorial Calculation
 
 # Setup :
-  - VsCode Editor, Python 3.x installed system
-  - Create a new Python file named `factorial.py`
-  - Open the file in VsCode Editor
-  
+
+- VsCode Editor, Python 3.x installed system
+- Create a new Python file named `factorial.py`
+- Open the file in VsCode Editor
+
 # Procedure :
-    1. Define a function `factorial(n)` that returns the factorial of n using recursion.
-    2. Inside the function, check if `n` is less than or equal to 1. If so, return 1 (base case).
-    3. For all other values of `n`, return `n * factorial(n-1)`.
-    4. Outside the function, prompt the user to enter a positive integer `n`.
-    5. Call the `factorial(n)` function and print the result.
-    6. Use memoization to optimize the recursive calls for larger values of `n`.
 
-# Discussion and Application
-    - The factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n. Mathematical definition: n! = n × (n-1) × (n-2) × ... × 2 × 1, where 0! = 1.
-    - This recursive approach is simple and elegant but can be inefficient for large `n` due to repeated calculations. Memoization helps optimize performance by caching previously computed results. The factorial function grows very rapidly (5! = 120, 10! = 3,628,800), making it important to understand computational limits.
-    - Applications include combinatorics (permutations and combinations nCr = n!/(r!×(n-r)!)), probability theory (binomial distributions), cryptography (key generation), algorithm complexity analysis, game theory (calculating possible game states), biology (genetic combinations), and machine learning (feature selection).
-    - Learning outcomes: Master basic recursion with clear base and recursive cases, understand how to implement memoization for optimization, analyze factorial's rapid growth rate, and apply factorial in solving combinatorial problems.
+    1. Define `factorial(n)` function with iterative approach
+    2. Handle base case: return 1 if n ≤ 1
+    3. Initialize `result = 1` to store the factorial value
+    4. Loop from 2 to n, multiplying: `result *= i`
+    5. Return `result` as the factorial of n
+    6. Get user input for n and display the result
 
-# DP Table Example:
-For n = 5:
-```
-n    | 0 | 1 | 2 | 3 | 4  | 5  |
------|---|---|---|---|----|----|
-f(n) | 1 | 1 | 2 | 6 | 24 | 120|
-```
+# Discussion
+
+    - The iterative approach is the most efficient solution with O(n) time complexity and O(1) space complexity. It avoids the overhead of recursive function calls and memory cost of storing intermediate results. The algorithm uses a single variable to accumulate the factorial value, making it memory-efficient and suitable for calculating large factorials without risk of stack overflow.
 
 # Code :
+
 ```python
-def factorial(n, memo={}):
-    if n in memo:
-        return memo[n]
-    
+def factorial(n):
     if n <= 1:
         return 1
-    
-    memo[n] = n * factorial(n-1, memo)
-    return memo[n]
+
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result
 
 n = int(input("Enter a positive integer: "))
 result = factorial(n)
 print(f"The factorial of {n} is: {result}")
-```
 
 # Output Example:
-```
 Enter a positive integer: 5
 The factorial of 5 is: 120
 ```
+
+# Complexity Analysis:
+
+| Approach             | Time Complexity | Space Complexity | Notes                                  |
+| -------------------- | --------------- | ---------------- | -------------------------------------- |
+| Iterative (For Loop) | O(n)            | O(1)             | Most efficient, no stack overflow risk |
+| Recursion Without DP | O(n)            | O(n)             | Stack overhead, risk of stack overflow |
+| Recursion With DP    | O(n)            | O(n)             | Uses extra memory for memoization      |
