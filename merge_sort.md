@@ -48,33 +48,19 @@ def merge_sort(arr):
     mid = len(arr) // 2
     left = arr[:mid]
     right = arr[mid:]
-
     left = merge_sort(left)
     right = merge_sort(right)
-
     return merge(left, right)
 
 def main():
-    arr = list(map(int, input("Enter array elements separated by space: ").split()))
-
-    print(f"Original array: {arr}")
+    arr = list(map(int, input("Input : ").split()))
     sorted_arr = merge_sort(arr)
     print(f"Sorted array: {sorted_arr}")
 
 if __name__ == "__main__":
     main()
-```
-
-# Input Example:
-
-```
-Enter array elements separated by space: 38 27 43 3 9 82 10
-```
-
-# Output Example:
-
-```
-Original array: [38, 27, 43, 3, 9, 82, 10]
+# Output :
+Input : [38, 27, 43, 3, 9, 82, 10]
 Sorted array: [3, 9, 10, 27, 38, 43, 82]
 ```
 

@@ -42,14 +42,16 @@ def quick_sort(arr, low, high):
         quick_sort(arr, pi + 1, high)
 
 def main():
-    arr = list(map(int, input("Enter array elements separated by space: ").split()))
+    arr = list(map(int, input("Input : ").split()))
     n = len(arr)
-    print(f"Original array: {arr}")
     quick_sort(arr, 0, n - 1)
     print(f"Sorted array: {arr}")
 
 if __name__ == "__main__":
     main()
+# Output :
+Input : [10, 7, 8, 9, 1, 5]
+Sorted array: [1, 5, 7, 8, 9, 10]
 ```
 
 # Input Example:
