@@ -57,26 +57,15 @@ def radix_sort(arr):
     return arr
 
 def main():
-    arr = list(map(int, input("Enter array elements separated by space: ").split()))
-
-    print(f"Original array: {arr}")
+    arr = list(map(int, input("Input : ").split()))
     radix_sort(arr)
     print(f"Sorted array: {arr}")
 
 if __name__ == "__main__":
     main()
-```
 
-# Input Example:
-
-```
-Enter array elements separated by space: 170 45 75 90 802 24 2 66
-```
-
-# Output Example:
-
-```
-Original array: [170, 45, 75, 90, 802, 24, 2, 66]
+# Output:
+Input : [170, 45, 75, 90, 802, 24, 2, 66]
 Sorted array: [2, 24, 45, 66, 75, 90, 170, 802]
 ```
 
