@@ -30,24 +30,21 @@ def insertion_sort(arr):
     for i in range(1, n):
         key = arr[i]
         j = i - 1
-
         while j >= 0 and arr[j] > key:
             arr[j + 1] = arr[j]
             j -= 1
-
         arr[j + 1] = key
-
     return arr
 
 def main():
-    arr = list(map(int, input("Enter array elements separated by space: ").split()))
-
-    print(f"Original array: {arr}")
+    arr = list(map(int, input("Input : ").split()))
     insertion_sort(arr)
     print(f"Sorted array: {arr}")
 
 if __name__ == "__main__":
     main()
+Input : [5, 2, 4, 6, 1, 3]
+Sorted array: [1, 2, 3, 4, 5, 6]
 ```
 
 # Input Example:
@@ -59,8 +56,7 @@ Enter array elements separated by space: 5 2 4 6 1 3
 # Output Example:
 
 ```
-Original array: [5, 2, 4, 6, 1, 3]
-Sorted array: [1, 2, 3, 4, 5, 6]
+
 ```
 
 # Complexity Analysis:
