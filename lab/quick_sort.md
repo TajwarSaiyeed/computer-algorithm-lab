@@ -1,4 +1,4 @@
-# Experiment No : 05
+# Experiment No : 03
 
 # Experiment Name : Quick Sort Algorithm
 

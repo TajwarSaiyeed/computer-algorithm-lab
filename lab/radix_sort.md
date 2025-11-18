@@ -1,4 +1,4 @@
-# Experiment No : 08
+# Experiment No : 06
 
 # Experiment Name : Radix Sort Algorithm
 

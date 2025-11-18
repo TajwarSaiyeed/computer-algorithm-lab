@@ -1,4 +1,4 @@
-# Experiment No : 06
+# Experiment No : 04
 
 # Experiment Name : Merge Sort Algorithm
 
